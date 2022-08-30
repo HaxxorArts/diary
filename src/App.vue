@@ -1,30 +1,44 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+    <div class="app">
+        <MyButton @click="fetchUser"></MyButton>
+    </div>
 </template>
 
+<script>
+import MyButton from "./components/UI/MyButton.vue";
+export default {
+    components: { MyButton },
+    data() {
+        return {
+            posts: [
+                {id, title, body}
+            ]
+        }
+    },
+    methods: {
+        async fetchUser() {
+            try {
+                const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
+                console.log(response);
+                this.posts = response.data;
+            } catch(e) {
+                alert('error')
+            }
+        }
+    },
+    /*mounted() {
+        this.fetchUser();
+    }*/
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.app {
+    padding: 20px;
 }
 </style>
