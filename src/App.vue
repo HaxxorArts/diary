@@ -1,22 +1,30 @@
 <template>
     <div class="app">
-        <MyButton @click="fetchUser"></MyButton>
+        <MyButton @click="showDialog">Sign in</MyButton>
+        <MyDialog v-model:show="visiableDialog">
+            <SignInForm></SignInForm>
+        </MyDialog>
     </div>
 </template>
 
 <script>
 import MyButton from "./components/UI/MyButton.vue";
+import PostList from "./components/PostList.vue";
+import axios from 'axios';
+import MyDialog from "./components/UI/MyDialog.vue";
+import SignInForm from "./components/SignInForm.vue";
 export default {
-    components: { MyButton },
+    components: { MyButton, PostList, MyDialog, SignInForm },
     data() {
         return {
             posts: [
-                {id, title, body}
-            ]
+                {id: 1, title: '', body: ''}
+            ],
+            visiableDialog: false,
         }
     },
     methods: {
-        async fetchUser() {
+        async fetchPost() {
             try {
                 const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
                 console.log(response);
@@ -24,10 +32,13 @@ export default {
             } catch(e) {
                 alert('error')
             }
+        },
+        showDialog() {
+            this.visiableDialog = true;
         }
     },
     /*mounted() {
-        this.fetchUser();
+        this.fetchPost();
     }*/
 }
 </script>
