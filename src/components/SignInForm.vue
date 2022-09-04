@@ -10,7 +10,8 @@
 <script>
 import axios from "axios";
 import MyButton from "./UI/MyButton.vue";
-import MyInput from "./UI/MyInput.vue"
+import MyInput from "./UI/MyInput.vue";
+import store from "@/store"
 export default {
     components: {
         MyButton, MyInput
@@ -24,7 +25,7 @@ export default {
     },
     methods: {
         autorisation() {
-            axios.post('http://10.18.55.104:8000/auth/login', this.user, 
+            axios.post('http://192.168.1.3:8000/auth/login', this.user, 
             {
                 headers: {
 
@@ -32,6 +33,8 @@ export default {
             })
             .then(response => {
                 console.log(response.data);
+                store.commit('addToken', response.data)
+                router.push('/auth')
             })
             .catch(function (error) {
                 console.log(error);
