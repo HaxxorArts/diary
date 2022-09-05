@@ -12,7 +12,6 @@
 import axios from "axios";
 import MyButton from "./UI/MyButton.vue";
 import MyInput from "./UI/MyInput.vue";
-import store from "@/store"
 import router from "@/router/router";
 export default {
     components: {
