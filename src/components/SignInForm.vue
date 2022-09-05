@@ -4,6 +4,7 @@
         <MyInput v-model="user.email" type="text" placeholder="Login" />
         <MyInput v-model="user.password" type="text" placeholder="Password" />
         <MyButton style="align-self: flex-end" @click="autorisation">Sign in</MyButton>
+        <MyButton @click="$router.push('/auth')">Push</MyButton>
      </form>
 </template>
 
@@ -12,6 +13,7 @@ import axios from "axios";
 import MyButton from "./UI/MyButton.vue";
 import MyInput from "./UI/MyInput.vue";
 import store from "@/store"
+import router from "@/router/router";
 export default {
     components: {
         MyButton, MyInput
@@ -33,7 +35,7 @@ export default {
             })
             .then(response => {
                 console.log(response.data);
-                store.commit('addToken', response.data)
+                localStorage.setItem("token", response.data.accsess_token)
                 router.push('/auth')
             })
             .catch(function (error) {
