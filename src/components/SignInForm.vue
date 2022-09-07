@@ -13,6 +13,7 @@ import axios from "axios";
 import MyButton from "./UI/MyButton.vue";
 import MyInput from "./UI/MyInput.vue";
 import router from "@/router/router";
+import store from "@/store";
 export default {
     components: {
         MyButton, MyInput
@@ -20,21 +21,23 @@ export default {
     data() {
         return {
             user: {
-
+                email: 'nilson@email.com',
+                password: 'nilson'
             }
         }
     },
     methods: {
         autorisation() {
-            axios.post('http://192.168.1.3:8000/auth/login', this.user, 
+            axios.post('http://localhost:8000/auth/login', this.user, 
             {
                 headers: {
 
                 }
             })
             .then(response => {
-                console.log(response.data);
-                localStorage.setItem("token", response.data.accsess_token)
+                console.log(response.data.access_token);
+                localStorage.setItem("token", response.data.access_token)
+                console.log(localStorage.state.tok)
                 router.push('/auth')
             })
             .catch(function (error) {
