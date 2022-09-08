@@ -1,10 +1,9 @@
 <template>
-    <form @submit.prevent class="form">
+    <form @submit.prevent class="login">
         <h4>Autorisation</h4>
-        <MyInput v-model="user.email" type="text" placeholder="Login" />
-        <MyInput v-model="user.password" type="text" placeholder="Password" />
-        <MyButton style="align-self: flex-end" @click="autorisation">Sign in</MyButton>
-        <MyButton @click="$router.push('/auth')">Push</MyButton>
+        <MyInput v-model="email" type="text" placeholder="Login" />
+        <MyInput v-model="password" type="text" placeholder="Password" />
+        <MyButton type="submit">Sign in</MyButton>
      </form>
 </template>
 
@@ -20,13 +19,18 @@ export default {
     },
     data() {
         return {
-            user: {
-                email: 'nilson@email.com',
-                password: 'nilson'
-            }
+            email: "",
+            password: ""
         }
     },
     methods: {
+        login:() => {
+            const email = this.email
+            const password = this.password
+            this.$store.dispatch('login', {email, password})
+            .then(() => this.$router.push('/'))
+            .catch(err => console.log(err))
+        },
         autorisation() {
             axios.post('http://localhost:8000/auth/login', this.user, 
             {
@@ -49,7 +53,7 @@ export default {
 </script>
 
 <style>
-.form {
+.login {
     display: flex;
     flex-direction: column;
     padding: 20px 50px;

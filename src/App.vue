@@ -1,11 +1,29 @@
 <template>
     <div class="app">
-        <router-view></router-view>
+        <div class="nav">
+            <router-link to="/">Home</router-link>
+            <span v-if="isLoggedIn"> | <a @click="logout">Logout</a></span>
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
 <script>
-
+export default {
+    computed: {
+        isLoggedIn : () => {
+            return this.$store.getters.isLoggedIn
+        },
+    },
+    methods: {
+        logout: () => {
+            this.$store.dispatch('logout')
+            .then(() => {
+                this.$router.push('/')
+            }) 
+        }
+    },
+}
 </script>
 
 <style>

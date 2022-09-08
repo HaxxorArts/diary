@@ -1,21 +1,26 @@
-import Signed from "@/pages/Signed";
+import Vue from "vue";
+import Router from 'vue-router';
+import stort from './store.js';
+
+import Secure from "@/pages/Secure";
 import SignUp from "@/pages/SignUp";
-import { createRouter, createWebHistory } from "vue-router";
 
-const routes = [
-    {
-        path: '/',
-        component: SignUp
-    },
-    {
-        path: '/auth',
-        component: Signed
-    }
-]
+Vue.use(Router)
 
-const router = createRouter({
-    routes,
-    history: createWebHistory(process.env.BASE_URL)
+const router = new Router({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'login',
+            component: SignUp
+        },
+        {
+            path: '/auth',
+            name: 'secure',
+            component: Secure
+        }
+    ]
 })
 
 export default router;
