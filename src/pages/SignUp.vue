@@ -1,6 +1,6 @@
 <template>
     <div>
-        <MyButton @click="showDialog">Sign in</MyButton>
+        <MyButton v-if="!isLoggedIn" @click="showDialog">Sign in</MyButton>
         <MyDialog v-model:show="visiableDialog">
             <SignInForm></SignInForm>
         </MyDialog>
@@ -35,8 +35,19 @@ export default {
         },
         showDialog() {
             this.visiableDialog = true;
+        },
+        logout() {
+            this.$store.dispatch('logout')
+            .then(() => {
+                this.$router.push('/')
+            })
         }
     },
+    computed: {
+        isLoggedIn() {
+            return this.$store.getters.isLoggedIn
+        }
+    }
     /*mounted() {
         this.fetchPost();
     }*/
