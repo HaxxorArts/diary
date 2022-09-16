@@ -2,8 +2,8 @@
     <div class="navbar">
         <div>Diary</div>
         <div class="navbar__btns">
-            <MyButton v-if="!isLoggedIn" @click="showDialog">Sign in</MyButton>
-            <MyButton v-if="isLoggedIn" @click="logout">Logout</MyButton>
+            <NavbarBtns v-if="!isLoggedIn" @click="showDialog">Sign in</NavbarBtns>
+            <NavbarBtns v-if="isLoggedIn" @click="logout">Logout</NavbarBtns>
         </div>
         <MyDialog v-if="!isLoggedIn" v-model:show="visiableDialog">
             <SignInForm></SignInForm>
@@ -13,13 +13,15 @@
 
 <script>
 import MyButton from "@/components/UI/MyButton.vue";
-import MyDialog from "./MyDialog.vue";
-import SignInForm from "../SignInForm.vue";
+import MyDialog from "@/components/UI/MyDialog.vue";
+import SignInForm from "@/components/SignInForm.vue";
+import NavbarBtns from "./NavbarBtns.vue";
 export default {
     components: {
     MyButton,
     MyDialog,
-    SignInForm
+    SignInForm,
+    NavbarBtns
 },
 data() {
     return {
@@ -45,7 +47,7 @@ computed: {
 }
 </script>
 
-<style>
+<style scoped>
 .navbar {
     background-color: black;
     color: white;

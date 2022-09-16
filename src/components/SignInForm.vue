@@ -1,10 +1,9 @@
 <template>
     <form @submit.prevent class="form">
-        <h4>Autorisation</h4>
-        <MyInput v-model="user.email" type="text" placeholder="Login" />
-        <MyInput v-model="user.password" type="text" placeholder="Password" />
-        <MyButton style="align-self: flex-end" @click="login">Sign in</MyButton>
-        <MyButton @click="$router.push('/auth')">Push</MyButton>
+        <MyLabel>Authorization</MyLabel>
+        <MyInput style="margin-top: 10px;" v-model="user.email" type="text" placeholder="Login" />
+        <MyInput style="margin-top: 10px;" v-model="user.password" type="text" placeholder="Password" />
+        <MyButton style="align-self: flex-end; margin-top: 10px;" @click="login">Sign in</MyButton>
      </form>
 </template>
 
@@ -12,10 +11,13 @@
 import MyButton from "./UI/MyButton.vue";
 import MyInput from "./UI/MyInput.vue";
 import router from "@/router/router";
+import MyLabel from "./UI/MyLabel.vue";
 export default {
     components: {
-        MyButton, MyInput
-    },
+    MyButton,
+    MyInput,
+    MyLabel
+},
     data() {
         return {
             user: {
@@ -57,8 +59,8 @@ export default {
 .form {
     display: flex;
     flex-direction: column;
-    padding: 20px 50px;
-    border: 2px solid teal;
+    padding: 30px 50px;
     border-radius: 15px;
+    align-items: center;
 }
 </style>

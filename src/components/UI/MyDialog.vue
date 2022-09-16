@@ -37,8 +37,5 @@ export default {
     margin: auto;
     background: white;
     border-radius: 15px;
-    min-height: 50px;
-    min-width: 300px;
-    padding: 20px;
 }
 </style>

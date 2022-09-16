@@ -6,19 +6,19 @@
 
 <script>
 export default {
-    name: 'MyButton'
+    name: 'NavbarBtns'
 }
 </script>
 
 <style scoped>
 .btn {
     padding: 10px 15px;
-    background: white;
-    color: black;
-    border: 2px solid black;
-}
-.btn:hover {
     background: black;
     color: white;
+    border: 2px solid white;
+}
+.btn:hover {
+    background: white;
+    color: black;
 }
 </style>
