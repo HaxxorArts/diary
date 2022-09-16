@@ -28,7 +28,7 @@ export default {
         login() {
             this.$store.dispatch('login', this.user)
             .then(() => {
-                router.push('/auth')
+                router.push('/')
 
             })
             .catch(err => console.log(err))
