@@ -18,32 +18,32 @@ import SignInForm from "@/components/SignInForm.vue";
 import NavbarBtns from "./NavbarBtns.vue";
 export default {
     components: {
-    MyButton,
-    MyDialog,
-    SignInForm,
-    NavbarBtns
-},
-data() {
-    return {
-        visiableDialog: false
-    }
-},
-methods: {
-    showDialog() {
-        this.visiableDialog = true;
+        MyButton,
+        MyDialog,
+        SignInForm,
+        NavbarBtns
     },
-    logout() {
-        this.$store.dispatch('logout')
-        .then(() => {
-            this.$router.push('/')
-        })
-    }
-},
-computed: {
+    data() {
+        return {
+            visiableDialog: false
+        }
+    },
+    methods: {
+        showDialog() {
+            this.visiableDialog = true;
+        },
+        logout() {
+            this.$store.dispatch('logout')
+            .then(() => {
+                this.$router.push('/')
+            })
+        }
+    },
+    computed: {
         isLoggedIn() {
             return this.$store.getters.isLoggedIn
         }
-    }
+    },
 }
 </script>
 

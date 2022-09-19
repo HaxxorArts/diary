@@ -12,6 +12,7 @@ import MyButton from "./UI/MyButton.vue";
 import MyInput from "./UI/MyInput.vue";
 import router from "@/router/router";
 import MyLabel from "./UI/MyLabel.vue";
+import MyDialogVue from "./UI/MyDialog.vue";
 export default {
     components: {
     MyButton,
@@ -30,8 +31,7 @@ export default {
         login() {
             this.$store.dispatch('login', this.user)
             .then(() => {
-                router.push('/')
-
+                router.push('/auth')
             })
             .catch(err => console.log(err))
         }

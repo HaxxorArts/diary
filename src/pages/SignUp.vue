@@ -1,9 +1,6 @@
 <template>
     <div>
-        <MyButton v-if="!isLoggedIn" @click="showDialog">Sign in</MyButton>
-        <MyDialog v-model:show="visiableDialog">
-            <SignInForm></SignInForm>
-        </MyDialog>
+        <MyLabel>Sign in to get access to diary</MyLabel>
     </div>
 </template>
 
@@ -13,8 +10,9 @@ import PostList from "@/components/PostList.vue";
 import axios from 'axios';
 import MyDialog from "@/components/UI/MyDialog.vue";
 import SignInForm from "@/components/SignInForm.vue";
+import MyLabel from "@/components/UI/MyLabel.vue";
 export default {
-    components: { MyButton, PostList, MyDialog, SignInForm },
+    components: { MyButton, PostList, MyDialog, SignInForm, MyLabel },
     data() {
         return {
             posts: [
@@ -33,24 +31,12 @@ export default {
                 alert('error')
             }
         },
-        showDialog() {
-            this.visiableDialog = true;
-        },
-        logout() {
-            this.$store.dispatch('logout')
-            .then(() => {
-                this.$router.push('/')
-            })
-        }
     },
     computed: {
         isLoggedIn() {
             return this.$store.getters.isLoggedIn
         }
     }
-    /*mounted() {
-        this.fetchPost();
-    }*/
 }
 </script>
 
