@@ -12,7 +12,7 @@
                 <th>Рейтинг</th>
                 <th>Примечание</th>
             </tr>
-            <tr>
+            <tr v-for="info in information">
                 <td>{{info.module}}</td>
                 <td>{{info.factor}}</td>
             </tr>
@@ -23,11 +23,15 @@
 export default {
     data() {
         return {
-            info: [
+            information: [
                 {
                     module: 'module',
                     factor: 'factor',
 
+                },
+                {
+                    module: 'module',
+                    factor: 'factor',
                 }
             ]
         }
