@@ -13,12 +13,12 @@ export default {
 <style scoped>
 .btn {
     padding: 10px 15px;
-    background: black;
+    background: #2889D6;
     color: white;
     border: 2px solid white;
 }
 .btn:hover {
     background: white;
-    color: black;
+    color: #2889D6;
 }
 </style>

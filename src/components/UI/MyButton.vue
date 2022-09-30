@@ -14,11 +14,11 @@ export default {
 .btn {
     padding: 10px 15px;
     background: white;
-    color: black;
-    border: 2px solid black;
+    color: #2889D6;
+    border: 2px solid #2889D6;
 }
 .btn:hover {
-    background: black;
+    background: #2889D6;
     color: white;
 }
 </style>
