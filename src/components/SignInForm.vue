@@ -14,11 +14,11 @@ import router from "@/router/router";
 import MyLabel from "./UI/MyLabel.vue";
 import MyDialogVue from "./UI/MyDialog.vue";
 export default {
-    components: {
-    MyButton,
-    MyInput,
-    MyLabel
-},
+        components: {
+        MyButton,
+        MyInput,
+        MyLabel
+    },
     data() {
         return {
             user: {
