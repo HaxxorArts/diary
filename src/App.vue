@@ -7,9 +7,13 @@
 
 <script>
 import Navbar from "./components/UI/Navbar.vue";
+import store from "./store";
 export default {
     components: {
         Navbar
+    },
+    created: () => {
+        store.dispatch("logout")
     }
 }
 </script>

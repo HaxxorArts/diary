@@ -25,7 +25,6 @@ export default {
             }
         }
     },
-    components: { StudentInfo, StudentInfo }
 }
 </script>
 <style scoped>
