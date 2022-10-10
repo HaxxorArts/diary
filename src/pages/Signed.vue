@@ -3,6 +3,7 @@
         <MyLabel>You've been done authorization successfully</MyLabel>
         <StudentInfo></StudentInfo>
         <StudentAccordion></StudentAccordion>
+        <StudentAccordion></StudentAccordion>
     </div>
 </template>
 
