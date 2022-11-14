@@ -12,13 +12,19 @@ export default {
 
 <style scoped>
 .btn {
+    width: 100%;
     padding: 10px 15px;
-    background: #2889D6;
+    background: crimson;
     color: white;
-    border: 2px solid white;
+    border: 2px solid crimson;
+    border-radius: 50px;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
 }
 .btn:hover {
     background: white;
-    color: #2889D6;
+    color: crimson;
+    border: 2px solid crimson;
+    border-radius: 50px;
 }
 </style>
