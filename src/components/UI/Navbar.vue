@@ -7,13 +7,16 @@
                     <p>Электронный дневник</p>
                     <p>Online ПензГТУ</p>
                 </div>
-                <div class="col-3 my__navbar__text">
+                <div class="col-4 my__navbar__text">
                     <p>Сотрудничество вуза с партерами - </p>
                     <p>родителями обучающихся</p>
                 </div>
-                <div class="col-3 my__navbar__text">
-                    <p>+7 (927) 392-52-88</p>
-                    <p>пн-пт с 9:00 до 16:00</p>
+                <div class="col-2 my__navbar__text d-inline-flex align-items-center">
+                    <img class="my__navbar__phoneimg" src="@/static/phone.png" />
+                    <div>
+                        <p>+7 (927) 392-52-88</p>
+                        <p>пн-пт с 9:00 до 16:00</p>
+                    </div>
                 </div>
                 <div class="col-2">
                     <NavbarBtns v-if="!isLoggedIn" @click="showDialog">Войти в систему</NavbarBtns>
@@ -70,7 +73,7 @@ export default {
     /*box-shadow: 1px 1px 1px lightgray;*/
     display: flex;
     align-items: center;
-    padding: 10px 15px;
+    padding: 25px 0;
     font-family: Montserrat, sans-serif;
 }
 .my__navbar__logotext p{
@@ -89,8 +92,8 @@ export default {
     color:black;
     margin-bottom: 0;
     font-family: Montserrat, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 20px;
 }
 .my__navbar__btns {
@@ -100,5 +103,9 @@ export default {
     height: 90px;
     width: 96px;
     align-items: center;
+}
+.my__navbar__phoneimg {
+    width: 18px;
+    height: 18px;
 }
 </style>
