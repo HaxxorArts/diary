@@ -1,31 +1,31 @@
 <template>
     <div class="container">
-        <div class="row">
-            <div class="my__navbar">
-                <div class="col-1 my__navbar_logo"><img src="@/static/logo.png"/></div>
-                <div class="col-3 my__navbar__logotext">
+        <div class="row my__navbar">  
+            <div class="col-12 col-md-6 d-inline-flex align-items-center">
+                <div class="my__navbar_logo"><img src="@/static/logo.png"/></div>
+                <div class="my__navbar__logotext">
                     <p>Электронный дневник</p>
                     <p>Online ПензГТУ</p>
                 </div>
-                <div class="col-4 my__navbar__text">
-                    <p>Сотрудничество вуза с партерами - </p>
-                    <p>родителями обучающихся</p>
-                </div>
-                <div class="col-2 my__navbar__text d-inline-flex align-items-center">
-                    <img class="my__navbar__phoneimg" src="@/static/phone.png" />
-                    <div>
-                        <p>+7 (927) 392-52-88</p>
-                        <p>пн-пт с 9:00 до 16:00</p>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <NavbarBtns v-if="!isLoggedIn" @click="showDialog">Войти в систему</NavbarBtns>
-                    <NavbarBtns v-if="isLoggedIn" @click="logout">Logout</NavbarBtns>
-                </div>
-                <MyDialog v-if="!isLoggedIn" v-model:show="visiableDialog">
-                    <SignInForm></SignInForm>
-                </MyDialog>
+             </div>
+             <div class="col-12 col-md-6 my__navbar__text">
+                 <p>Сотрудничество вуза с партерами - </p>
+                 <p>родителями обучающихся</p>
             </div>
+            <div class="col-12 col-md-6 my__navbar__text d-inline-flex align-items-center">
+                <img class="my__navbar__phoneimg" src="@/static/phone.png" />
+                <div>
+                    <p>+7 (927) 392-52-88</p>
+                    <p>пн-пт с 9:00 до 16:00</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <NavbarBtns v-if="!isLoggedIn" @click="showDialog">Войти в систему</NavbarBtns>
+                    <NavbarBtns v-if="isLoggedIn" @click="logout">Logout</NavbarBtns>
+            </div>
+            <MyDialog v-if="!isLoggedIn" v-model:show="visiableDialog">
+                <SignInForm></SignInForm>
+            </MyDialog> 
         </div>
     </div>
 </template>
@@ -67,6 +67,13 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width: 768px) {
+
+}
+.margpad {
+    margin: 0;
+    padding: 0;
+}
 .my__navbar {
     background-color: white;
     color: white;
