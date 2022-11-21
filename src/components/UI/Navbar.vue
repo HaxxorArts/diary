@@ -1,27 +1,27 @@
 <template>
     <div class="container">
         <div class="row my__navbar">  
-            <div class="col-12 col-md-6 d-inline-flex align-items-center">
+            <div class="col-12 col-md-5 col-lg-4 col-xl-4 d-inline-flex align-items-center">
                 <div class="my__navbar_logo"><img src="@/static/logo.png"/></div>
                 <div class="my__navbar__logotext">
                     <p>Электронный дневник</p>
                     <p>Online ПензГТУ</p>
                 </div>
              </div>
-             <div class="col-12 col-md-6 my__navbar__text">
+             <div class="col-6 col-md-4 col-lg-3 col-xl-3 my__navbar__text">
                  <p>Сотрудничество вуза с партерами - </p>
                  <p>родителями обучающихся</p>
             </div>
-            <div class="col-12 col-md-6 my__navbar__text d-inline-flex align-items-center">
+            <div class="col-6 col-md-3 col-lg-2 col-xl-2 my__navbar__text d-inline-flex align-items-center">
                 <img class="my__navbar__phoneimg" src="@/static/phone.png" />
                 <div>
                     <p>+7 (927) 392-52-88</p>
                     <p>пн-пт с 9:00 до 16:00</p>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-12 col-lg-3 col-xl-3">
                 <NavbarBtns v-if="!isLoggedIn" @click="showDialog">Войти в систему</NavbarBtns>
-                    <NavbarBtns v-if="isLoggedIn" @click="logout">Logout</NavbarBtns>
+                <NavbarBtns v-if="isLoggedIn" @click="logout">Logout</NavbarBtns>
             </div>
             <MyDialog v-if="!isLoggedIn" v-model:show="visiableDialog">
                 <SignInForm></SignInForm>
@@ -68,7 +68,12 @@ export default {
 
 <style scoped>
 @media (max-width: 768px) {
-
+    .my__navbar__text p:first-child{
+        margin-top: 20px;
+    }
+    .my__navbar__phoneimg {
+        margin-top: 20px;
+    }
 }
 .margpad {
     margin: 0;

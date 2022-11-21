@@ -27,4 +27,12 @@ export default {
     border: 2px solid crimson;
     border-radius: 50px;
 }
+
+@media(max-width: 992px) {
+    .btn {
+        margin-top: 20px;
+        /*margin-left: 100px;
+        margin-right: 100px;*/
+    }
+}
 </style>
