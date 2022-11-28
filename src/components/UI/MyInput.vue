@@ -19,17 +19,18 @@ export default {
 <style scoped>
 .input {
     width: 100%;
-    background: white;
-    color: #2889D6;
-    border: 2px solid #2889D6;
-    padding: 10px 15px;
+    background: #eee;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: none;
 }
 .input:hover {
-    background: #2889D6;
-    color: white;
+    background: #ddd;
+    color: black;
 }
 .input:focus {
-    background: #2889D6;
-    color: white;
+    background: #ddd;
+    color: black;
 }
 </style>

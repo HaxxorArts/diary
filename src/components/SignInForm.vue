@@ -1,9 +1,11 @@
 <template>
+    <div class="form__hat">
+        <label>Вход в электронный дневник</label>
+    </div>
     <form @submit.prevent class="form">
-        <MyLabel>Authorization</MyLabel>
-        <MyInput style="margin-top: 10px;" v-model="user.email" type="text" placeholder="Login" />
-        <MyInput style="margin-top: 10px;" v-model="user.password" type="text" placeholder="Password" />
-        <MyButton style="align-self: flex-end; margin-top: 10px;" @click="login">Sign in</MyButton>
+        <MyInput style="margin-top: 20px;" v-model="user.email" type="text" placeholder="Login" />
+        <MyInput style="margin-top: 20px;" v-model="user.password" type="text" placeholder="Password" />
+        <button class="MyFormbtn" @click="login">Войти в систему</button>
      </form>
 </template>
 
@@ -59,8 +61,27 @@ export default {
 .form {
     display: flex;
     flex-direction: column;
-    padding: 30px 50px;
-    border-radius: 15px;
+    padding: 30px 100px 50px 100px;
+    border-radius:0 0 15px 15px;
     align-items: center;
+}
+.MyFormbtn {
+    margin-top: 50px;
+    align-self: center;
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: 2px solid crimson;
+    color: white;
+    background-color: crimson;
+}
+.MyFormbtn:hover {
+    border: 2px solid crimson;
+    color: crimson;
+    background-color: white;
+}
+.form__hat {
+    background-color: teal;
+    padding: 30px 100px;
+    border-radius: 15px 15px 0 0;
 }
 </style>
