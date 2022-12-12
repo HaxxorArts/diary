@@ -5,14 +5,16 @@
             <router-view></router-view>
         </div>
     </div>
+    <Footer></Footer>
 </template>
 
 <script>
 import Navbar from "./components/UI/Navbar.vue";
+import Footer from "@/components/UI/Footer.vue";
 import store from "./store";
 export default {
     components: {
-        Navbar
+        Navbar, Footer
     },
     created: () => {
         store.dispatch("logout")
@@ -30,5 +32,6 @@ export default {
 }
 .app {
     padding: 20px;
+    background-color: #fff;
 }
 </style>
